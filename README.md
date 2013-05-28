@@ -3,6 +3,8 @@ Stylizer
 
 A simple one-page web app which generates colour schemes using the [colourlovers.com](http://colourlovers.com) API.
 
+Try it online at [collectivecognition.github.io/stylizer](http://collectivecognition.github.io/stylizer/).
+
 Features
 ========
 
