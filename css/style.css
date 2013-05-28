@@ -1,0 +1,68 @@
+#header,
+#menu,
+#wrapper {
+	width: 600px;
+	margin: 0px auto;
+	padding: 0px;
+	display: block;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+}
+#header,#header input {
+	margin-top: 10px;
+	margin-bottom: 0px;
+	line-height: auto;
+	font-family: sans-serif;
+	font-weight: bolder;
+	font-size: 38px;
+	border: none;
+	display: block;
+	background: transparent;
+}
+#menu {
+	height: 40px;
+	margin-bottom: 10px;
+}
+#menu ul {
+	list-style: none;
+	width: 600px;
+	padding: 0px;
+	display: block;
+	float: none;
+	clear: both;
+	margin-left: 10px;
+}
+#menu li {
+	float: left;
+	display: inline-block;
+	margin-right: 20px;
+}
+#menu li a {
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	text-decoration: none;
+	line-height: 40px;
+}
+#wrapper {
+	background: #fff;
+}
+#wrapper p {
+	padding: 10px;
+	margin: 0px;
+	color: #353535;
+}
+#tools {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 150px;
+	margin: 10px;
+}
+#tools button {
+	width: 150px;
+	margin: 0px;
+}

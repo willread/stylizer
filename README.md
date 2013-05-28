@@ -1,4 +1,13 @@
-randomfont
-==========
+Stylizer
+========
 
-Provides a simple API to embed a random font via Google Web Fonts
+A simple one-page web app which generates colour schemes using the [colourlovers.com](http://colourlovers.com) API.
+
+Features
+========
+
+- Fetching of random palettes from [colourlovers.com](http://colourlovers.com)
+- Previewing of colour schemes in a simple web layout
+- Random shuffling of colours to different aspects of the layout
+- Adjustment of hue, saturation and lightness
+- Easy copying of colour values in various CSS-friendly formats
