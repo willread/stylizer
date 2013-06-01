@@ -8,25 +8,68 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<script type="text/javascript" src="js/colour.js"></script>
+	<!--<script type="text/javascript" src="js/lib/backbone.js"></script>-->
+	<!--<script type="text/javascript" src="js/lib/bootstrap.min.js"></script>-->
+	<script type="text/javascript" src="js/lib/colour.js"></script>
+	<script type="text/javascript" src="js/lib/jquery.js"></script>
+	<script type="text/javascript" src="js/lib/underscore.js"></script>
 	<script type="text/javascript" src="js/stylizer.js"></script>
 	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 <body>
-	<div id="tools"></div>
-	<div id="main">
-			<h1 id="header"><input type="text" id="header-input" value="Stylizer"></h1>
-			<div id="menu">
-				<ul>
-					<li><a href="#" onclick="return true;">Dedecora</a></li>
-					<li><a href="#" onclick="return true;">Incurrunt</a></li>
-					<li><a href="#" onclick="return true;">Facta</a></li>
-					<li><a href="#" onclick="return true;">Quasi</a></li>
-					<li><a href="#" onclick="return true;">Paranda</a></li>
-					<li><a href="#" onclick="return true;">Voluptas</a></li>
-					<li><a href="#" onclick="return true;">Maximisque</a></li>
-				</ul>
+	<div id="tools">
+		<button class="btn btn-primary" id="random">Random Palette</button>
+		<button class="btn btn-inverse" id="shuffle">Shuffle Colours</button>
+		<div class="btn-toolbar">
+		  <div class="btn-group">
+		    <button class="btn btn-inverse" id="hue-subtract"><i class="icon-white icon-minus"></i></button>
+		    <button class="btn disabled">Hue</button>
+		    <button class="btn btn-inverse" id="hue-add"><i class="icon-white icon-plus"></i></button>
+		  </div>
+		</div>
+		<div class="btn-toolbar">
+		  <div class="btn-group">
+		    <button class="btn btn-inverse" id="saturation-subtract"><i class="icon-white icon-minus"></i></button>
+		    <button class="btn disabled">Saturation</button>
+		    <button class="btn btn-inverse" id="saturation-add"><i class="icon-white icon-plus"></i></button>
+		  </div>
+		</div>
+		<div class="btn-toolbar">
+		  <div class="btn-group">
+		    <button class="btn btn-inverse" id="lightness-subtract"><i class="icon-white icon-minus"></i></button>
+		    <button class="btn disabled">Lightness</button>
+		    <button class="btn btn-inverse" id="lightness-add"><i class="icon-white icon-plus"></i></button>
+		  </div>
+		</div>
+		<button class="btn btn-danger" id="reset">Reset</button>
+	</div>
+	<div id="palette">
+		<div id="colours"></div>
+		<div class="btn-toolbar">
+		  <div class="btn-group">
+		    <button class="btn btn-inverse active" id="hex">Hex</button>
+		    <button class="btn btn-inverse" id="rgb">RGB</button>
+		    <button class="btn btn-inverse" id="hsl">HSL</button>
+		  </div>
+		</div>
+	</div>
+	<div id="main" class="container">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<a class="brand" href="#">Stylizer</a>
+					<ul class="nav">
+						<li><a href="#" onclick="return true;">Dedecora</a></li>
+						<li><a href="#" onclick="return true;">Incurrunt</a></li>
+						<li><a href="#" onclick="return true;">Facta</a></li>
+						<li><a href="#" onclick="return true;">Quasi</a></li>
+						<li><a href="#" onclick="return true;">Paranda</a></li>
+						<li><a href="#" onclick="return true;">Voluptas</a></li>
+						<li><a href="#" onclick="return true;">Maximisque</a></li>
+					</ul>
+				</div>
 			</div>
 			<div id="wrapper">
 				<p>Hinc inimicus. Ut errem, ne voluptate victi faciant id, tum in dedecora incurrunt, plerumque improborum facta primo suspicio insequitur, haec explicari non placebit Latine? De quibus ante dictum est, quae quasi delapsa de caelo est ad cognitionem omnium, quae pertinerent ad bene beateque vivendum. Explicavi, inquam, cum.</p>

@@ -1,15 +1,88 @@
+body {
+	padding-top: 20px;
+}
+
+html {
+	background: transparent;
+}
+
+.navbar-inner {
+	background-image: none;
+	border: none;
+}
+
+.navbar .nav>li>a,
+.navbar .brand {
+	text-shadow: none;
+}
+
+#tools {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 200px;
+	margin: 10px;
+	background: rgba(0, 0, 0, 0.5);
+	padding: 10px;
+}
+
+#tools .btn-group {
+	margin: 0 0 5px 0;
+	width: 202px;
+}
+
+#tools .btn-group .btn {
+	width: 25%;
+	margin-bottom: 0px;
+}
+
+#tools .btn-group .btn.disabled {
+	font-weight: bold;
+	width: 50%;
+}
+
+#tools .btn-toolbar {
+	margin: 0;
+}
+
+#tools button {
+	width: 200px;
+	margin-bottom: 5px;
+}
+
+#palette {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	width: 200px;
+	margin: 10px;
+	background: rgba(0, 0, 0, 0.5);
+	padding: 10px;
+}
+
+#palette .btn-toolbar {
+	margin: 5px 0 0 0;
+}
+
+#palette .btn-group {
+	width: 100%;
+	margin: 0px;
+}
+
+#palette .btn {
+	width: 33%;
+	margin: 0px;
+}
+
+#colours .colour {
+	padding: 5px;
+	text-align: center;
+	font-size: 14px;
+}
+
 #header,
 #menu,
 #wrapper {
-	width: 600px;
-	margin: 0px auto;
-	padding: 0px;
-	display: block;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	-ms-border-radius: 5px;
-	-o-border-radius: 5px;
-	border-radius: 5px;
 }
 #header,#header input {
 	margin-top: 10px;
@@ -49,20 +122,10 @@
 }
 #wrapper {
 	background: #fff;
+	height: auto;
 }
 #wrapper p {
 	padding: 10px;
 	margin: 0px;
 	color: #353535;
-}
-#tools {
-	position: fixed;
-	bottom: 0px;
-	left: 0px;
-	width: 150px;
-	margin: 10px;
-}
-#tools button {
-	width: 150px;
-	margin: 0px;
 }

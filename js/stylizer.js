@@ -1,5 +1,5 @@
 (function(){
-	var palette, backup; // Stores the current colour palette and a backup copy so we can retain saturation
+	var palette, backup; // Stores the current colour palette and a backup copy in case we want to reset
 	// Fetch a new random palette from colourlovers
 	var fetchPalette = function(){
 		fetchJSONP("http://www.colourlovers.com/api/palettes/random?format=json&jsonCallback=setPalette");
@@ -16,6 +16,7 @@
 		// Add colors to palette
 		for(var ii = 0; ii < p[0].colors.length; ii++){
 			palette.push(new Colour(p[0].colors[ii]));
+			backup.push(new Colour(p[0].colors[ii]));
 		}
 		// Add black and white to all palettes
 		palette.push(new Colour("ffffff"));
@@ -25,14 +26,21 @@
 	}
 	// Apply updated styles using the current palette
 	var updateColours = function(){
+		// Apply styles
 		document.body.style.background = palette[0].stringify("rgb");
-		document.getElementById("header").style.color = palette[1].stringify("rgb");
-		document.getElementById("header-input").style.color = palette[1].stringify("rgb");
-		document.getElementById("menu").style.background = palette[2].stringify("rgb");
+		$(".navbar-inner").css("background-color", palette[2].stringify("rgb"));
 		var anchors = document.getElementsByTagName("a");
-		for(var a = 0; a < anchors.length; a++){
-			anchors[a].style.color = palette[3].stringify("rgb");
+		$(".navbar-inner a").css("color", palette[3].stringify("rgb"));
+		$(".brand").css("color", palette[1].stringify("rgb"));
+		// Update onscreen palette
+		$("#colours").html("");
+		for(var ii = 0; ii < palette.length; ii++){
+			var el = $("<div class=\"colour\"></div>");
+			el.css("background", palette[ii].stringify("rgb"));
+			el.css("color", palette[ii].inverse().stringify("rgb"));
+			$("#colours").append(el);
 		}
+		setFormat(format);
 	}
 	// Randomly shuffle the current palette
 	var shuffleColours = function(){
@@ -87,25 +95,38 @@
 		}
 		updateColours();
 	}
+	// Reset palette
+	var reset = function(){
+		palette = [];
+		for(var ii = 0; ii < backup.length; ii++){
+			palette[ii] = new Colour(backup[ii].stringify("rgb"));
+		}
+		updateColours();
+	}
+	// Set colour format
+	var format = "rgb";
+	var setFormat = function(f){
+		$("#palette button").removeClass("active");
+		$("#" + f).addClass("active");
+		format = f;
+		for(var ii = 0; ii < palette.length; ii++){
+			$($("#colours div")[ii]).html((format == "hex" ? "#" : "") + palette[ii].stringify(format));
+		}
+	}
 	window.onload = function(){
 		fetchPalette(); // Fetch initial palette
-		// Generate menu
-		var tools = document.getElementById("tools");
-		var buttons = {
-			"Random Palette": fetchPalette,
-			"Shuffle Colours": shuffleColours,
-			"Lighten": lighten,
-			"Darken": darken,
-			"Saturate": saturate,
-			"Desaturate": desaturate,
-			"Increase Hue": hueIncrease,
-			"Decrease Hue": hueDecrease
-		}
-		for(var key in buttons){
-			var el = document.createElement("button");
-			el.onclick = buttons[key];
-			el.innerHTML = key;
-			tools.appendChild(el);
-		}
+		// Tool event handlers
+		$("#random").click(fetchPalette);
+		$("#shuffle").click(shuffleColours);
+		$("#hue-add").click(hueIncrease);
+		$("#hue-subtract").click(hueDecrease);
+		$("#saturation-add").click(saturate);
+		$("#saturation-subtract").click(desaturate);
+		$("#lightness-add").click(lighten);
+		$("#lightness-subtract").click(darken);
+		$("#reset").click(reset);
+		$("#hex").click(function(){ setFormat("hex") });
+		$("#rgb").click(function(){ setFormat("rgb") });
+		$("#hsl").click(function(){ setFormat("hsl") });
 	}
 })();

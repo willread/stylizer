@@ -232,5 +232,14 @@
 					break;
 			}
 		}
+		// Public method to calculate and return the inverse of a colour
+		this.inverse = function(){
+			var colour = new Colour();
+			colour.r(255 - rgba.r);
+			colour.g(255 - rgba.g);
+			colour.b(255 - rgba.b);
+			colour.a(rgba.a);
+			return colour;
+		}
 	};
 })();
