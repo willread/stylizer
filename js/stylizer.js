@@ -13,7 +13,7 @@
 	// Handle a new colourlovers palette
 	setPalette = function(p){ // Global so the JSONP callback can find it
 		palette = [], backup = [];
-		// Add colors to palette
+		// Add colours to palette
 		for(var ii = 0; ii < p[0].colors.length; ii++){
 			palette.push(new Colour(p[0].colors[ii]));
 			backup.push(new Colour(p[0].colors[ii]));
@@ -114,7 +114,17 @@
 		}
 	}
 	window.onload = function(){
-		fetchPalette(); // Fetch initial palette
+		// fetchPalette(); // Fetch initial palette
+		// Initial palette
+		// A little hacky as we're simulating some colourlovers json
+		setPalette({0:{
+			colors: [
+				"ddd",
+				"fff",
+				"666",
+				"eee"
+			]
+		}});
 		// Tool event handlers
 		$("#random").click(fetchPalette);
 		$("#shuffle").click(shuffleColours);

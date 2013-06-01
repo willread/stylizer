@@ -1,5 +1,6 @@
 body {
 	padding-top: 20px;
+	background: #ddd;
 }
 
 html {
@@ -8,12 +9,14 @@ html {
 
 .navbar-inner {
 	background-image: none;
+	background-color: #333;
 	border: none;
 }
 
 .navbar .nav>li>a,
 .navbar .brand {
 	text-shadow: none;
+	color: #ddd;
 }
 
 #tools {
@@ -24,10 +27,20 @@ html {
 	margin: 10px;
 	background: rgba(0, 0, 0, 0.5);
 	padding: 10px;
+	opacity: 0.5;
+}
+
+#tools:hover {
+	opacity: 1.0;
+	-webkit-transition-duration: 150ms;
 }
 
 #tools .btn {
 	text-shadow: 1px 1px 1px #000;
+}
+
+#tools #reset {
+	margin-bottom: 0px;
 }
 
 #tools .btn-group {
@@ -87,50 +100,11 @@ html {
 	font-size: 14px;
 }
 
-#header,
-#menu,
-#wrapper {
-}
-#header,#header input {
-	margin-top: 10px;
-	margin-bottom: 0px;
-	line-height: auto;
-	font-family: sans-serif;
-	font-weight: bolder;
-	font-size: 38px;
-	border: none;
-	display: block;
-	background: transparent;
-}
-#menu {
-	height: 40px;
-	margin-bottom: 10px;
-}
-#menu ul {
-	list-style: none;
-	width: 600px;
-	padding: 0px;
-	display: block;
-	float: none;
-	clear: both;
-	margin-left: 10px;
-}
-#menu li {
-	float: left;
-	display: inline-block;
-	margin-right: 20px;
-}
-#menu li a {
-	font-family: sans-serif;
-	font-weight: bold;
-	font-size: 14px;
-	text-decoration: none;
-	line-height: 40px;
-}
 #wrapper {
 	background: #fff;
 	height: auto;
 }
+
 #wrapper p {
 	padding: 10px;
 	margin: 0px;
